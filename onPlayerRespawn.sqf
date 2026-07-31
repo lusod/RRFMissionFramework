@@ -1,0 +1,1 @@
+[player] call lus_loadouts_fnc_loadInventory;

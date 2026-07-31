@@ -1,10 +1,27 @@
+// To change
 overviewPicture = "image\image1.jpg"; // Replace the image file with your own image. Make sure to keep it the same size.
-author = "C. McCarthy"; // Replace with your name.
+author = "C. McCarthy and S. Lue"; // Replace with your name.
 onLoadName = "Default Mission"; // Replace with your mission name
 onLoadMission = "Description"; // Replace with your mission description
 loadScreen        = "image\image1.jpg"; // Replace the image file with your own image. Make sure to keep it the same size.
- 
+briefingName 	= "Default Mission"; // Name in mission select, replace with your mission name
+missionGroup = "RRFDefault"; //Name used by loadout script to keep track of which campaign it is. If you dont change it people can load saved loadouts from previous campaigns
+
+
+// To ignore
 respawnOnStart = -1; // This insures people do not die at the start.
+enableDebugConsole = 1; // Debug console for admin
+//disableChannels[]={0,1,2,4}; // Disable channels, enable if you want to stop people typing in chat or marking on the map. Good for WW2 ops
+aiKills = 0; // Disables the scoreboard
+disabledAI = 1; // Disables AI taking slots in the lobby
+debriefing = 1; 
+
+class cfgFunctions // For loadout script
+{
+    createShortcuts = 1;
+	#include "scripts\lusod\cfgFunctions.hpp"
+};
+
 
 class Header // This displays what type of game it is.
 {
@@ -12,3 +29,4 @@ class Header // This displays what type of game it is.
 	minPlayers = 1;
 	maxPlayers = 200;
 };
+
