@@ -1,0 +1,14 @@
+overviewPicture = "image\image1.jpg"; // Replace the image file with your own image. Make sure to keep it the same size.
+author = "C. McCarthy"; // Replace with your name.
+onLoadName = "Default Mission"; // Replace with your mission name
+onLoadMission = "Description"; // Replace with your mission description
+loadScreen        = "image\image1.jpg"; // Replace the image file with your own image. Make sure to keep it the same size.
+ 
+respawnOnStart = -1; // This insures people do not die at the start.
+
+class Header // This displays what type of game it is.
+{
+	gameType = Zeus;
+	minPlayers = 1;
+	maxPlayers = 200;
+};
