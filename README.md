@@ -3,7 +3,7 @@ Mission Framework for 1st RRF Arma 3 Realism Milsim Arma 3 group
 
 ## Installation
 1. Save a empty mission on the map you want to use.
-2. Go to releases. Download the latest version.
+2. Press the green **<> Code** button and then **Download ZIP**
 3. Put all the contents into the mission folder
 4. Change the stuff in description.ext
 
