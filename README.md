@@ -24,6 +24,28 @@ But it's best to stick the default unless you really need it.
 ## Respawn
 If you have a problem with respawns, try placing a empty marker and settings the variable name to respawn!
 
+# Zdo Persistence
+Included in the framework is Zdo persistence. 
+This is a fantastic persistence script that saves a lot and is super easy to use. 
+Highly recommend!
+
+## Saved items
+
+- vehicles (positions, damage, inventory, fuel, textures, flags)
+- crates/boxes (positions, damage, inventory, arsenal)
+- planted mines (positions)
+- players (positions, loadout, ACE medical)
+- all map markers
+- ACE rallypoint position
+- ACE trenches, ACE Fortify statics, any buildings placed by Zeus (technically, almost any static which are considered "Things" in Arma)
+- ruined buildings, fences, trees
+- all units (positions, loadout, ACE medical, roles in vehicles).
+
+## Documentation
+
+Please check out [Wiki](https://github.com/drzdo/arma3-persistent-campaign/wiki).
+
+
 ## Connall Mod:
 
 DO NOT USE ANY OF THESE IN YOUR PRESETS! CONNALLMOD CONTAINS THEM ALL.
