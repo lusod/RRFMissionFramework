@@ -1,0 +1,11 @@
+#include "Functions\zdo\_mission\inc_description.ext"
+
+Respawn = 3;
+RespawnDelay = 5;
+RespawnDialog = 1;
+respawnOnStart = 0;
+respawnTemplates[] = {};
+
+joinUnassigned = 0;
+briefing = 0;
+debriefing = 0;
