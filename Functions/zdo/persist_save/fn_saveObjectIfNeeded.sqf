@@ -26,6 +26,14 @@ if (_type in _typesToSave) exitWith {
 	_this call zdo_persist_save_fnc_saveAsBuilding;
 };
 
+if (count attachedObjects _this != 0) then {
+	_this setVariable ["zdo_vehicleID", str(_this)]
+};
+private _attachedTo = attachedTo _this;
+if (!(isNull _attachedTo)) then {
+	[_this, _attachedTo] call zdo_util_fnc_saveAttachedInfo;
+};
+
 private _objectType = _object call BIS_fnc_objectType;
 if (_objectType isEqualTo ["Object", "House"]) exitWith {
 	_this call zdo_persist_save_fnc_saveAsBuilding;
