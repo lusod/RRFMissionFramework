@@ -8,6 +8,8 @@ params ["_o"];
 	["fuel", fuel _o],
 	["container", [_o] call zdo_util_fnc_serializeContainer],
 	["tex", getObjectTextures _o],
+	["attachedObjs", attachedObjects _o],
+	["attachedTextures", {getObjectTextures _x} foreach attachedObjects _o],
 	["vars", [_o] call zdo_persist_save_fnc_saveZdoVariables],
 	["flag", [_o] call zdo_persist_save_fnc_getForcedFlagTexture]
 ];

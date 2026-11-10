@@ -79,6 +79,24 @@ if (_rawType == "bu" || _rawType == "th" || _rawType == "fl") then {
 		// This does not seem to have an effect but still simulation is disabled.
 		_o set3DENAttribute ["objectIsSimple", true];
 	};
+	
+	_attachedTo = _h getOrDefault ["attachedTo", objNull];
+	_initServerOnly pushBack (format ['_a = "attached to %1";', _attachedTo]);
+	/*if (!(_attachedTo isEqualTo objNull)) then {
+		_initServerOnly pushBack (format ['this attachTo [%1, [0, 0, 0]];', _attachedTo]);
+	}*/
+	_tex = _h getOrDefault ["tex", []];
+
+	_initServerOnly pushBack (format ['_b = "Textured to %1";', _tex]);
+	if (!(_tex isEqualTo [])) then {
+		_texi = 0;
+		{
+		_o setObjectTexture [_texi, _tex select _texi];
+		_initGlobal pushBack (format ['this setObjectTexture [%1, "%2"];', _texi, _tex select _texi]);
+		_texi = _texi + 1;
+	} forEach _tex;
+	};
+	
 };
 
 if (_rawType == "ve" || _rawType == "th") then {
