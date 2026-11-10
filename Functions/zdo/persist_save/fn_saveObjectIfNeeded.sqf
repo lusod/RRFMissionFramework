@@ -8,12 +8,14 @@ private _typesToIgnore = [
 	"ACE_Rallypoint_Independent_Base",
 	"VR_3DSelector_01_default_F",
 	"UserTexture1m_F",
-	"HIG_mywall"
+	"HIG_mywall",
+	"CGS_Band_1"
 ];
 private _typesToSave = [
 	"ACE_Rallypoint_West",
 	"ACE_Rallypoint_East",
-	"ACE_Rallypoint_Independent"
+	"ACE_Rallypoint_Independent",
+	"ACE_tagging_texture1m"
 ];
 
 private _type = typeOf _object;
