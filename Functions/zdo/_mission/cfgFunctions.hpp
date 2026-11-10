@@ -9,6 +9,7 @@ class TAG_ZdoUtil
 		class serializeContainer {};
 		class wipeContainerInventory {};
 		class spawnTrigger {};
+		class saveAttachedInfo {};
 	};
 };
 

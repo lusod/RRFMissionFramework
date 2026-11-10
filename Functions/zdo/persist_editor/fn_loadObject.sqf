@@ -52,7 +52,7 @@ private _vars = _h getOrDefault ["vars", []];
 	_initGlobal pushBack (format ['this setVariable ["%1", "%2"];', _k, _v]);
 	if (_k == "zdo_vehicleID") then {
 		_initGlobal pushBack (format ['this setVehicleVarName "%1";', _v]);
-		_initGlobal pushback (format ['missionNamespace setVariable [%1, this];', _k,]);
+		_initGlobal pushback (format ['missionNamespace setVariable [%1, this];', _v]);
 	};
 } forEach _vars;
 
