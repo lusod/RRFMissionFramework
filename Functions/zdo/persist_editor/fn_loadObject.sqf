@@ -50,7 +50,12 @@ private _vars = _h getOrDefault ["vars", []];
 	private _k = _x select 0;
 	private _v = _x select 1;
 	_initGlobal pushBack (format ['this setVariable ["%1", "%2"];', _k, _v]);
+	if (_k == "zdo_vehicleID") then {
+		_initGlobal pushBack (format ['this setVehicleVarName "%1";', _v]);
+		_initGlobal pushback (format ['missionNamespace setVariable [%1, this];', _k,]);
+	};
 } forEach _vars;
+
 
 private _flag = _h get "flag";
 if ((typeName _flag == "STRING") && !(_flag isEqualTo "")) then {
@@ -141,6 +146,7 @@ if (_rawType == "fl") then {
 	_o animateSource ["Flag_source", _phase, true];
 	_initServerOnly pushBack (format ['this animateSource ["Flag_source", %1, true];', _phase]);
 };
+
 
 [_o, _initServerOnly] call zdo_persist_editor_fnc_appendInitServerAttribute;
 [_o, _initGlobal] call zdo_persist_editor_fnc_appendInitGlobalAttribute;
