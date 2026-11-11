@@ -9,7 +9,11 @@ private _typesToIgnore = [
 	"VR_3DSelector_01_default_F",
 	"UserTexture1m_F",
 	"HIG_mywall",
-	"CGS_Band_1"
+	"CGS_Band_1", 
+	"CGS_Part_Anchor",
+	"CGS_Part_Ratchet",
+	"CGS_Part_Hook",
+	"CGS_Band_2"
 ];
 private _typesToSave = [
 	"ACE_Rallypoint_West",
@@ -25,9 +29,12 @@ if (_type in _typesToIgnore) exitWith {
 if (_type in _typesToSave) exitWith {
 	_this call zdo_persist_save_fnc_saveAsBuilding;
 };
-
+//(TODO) Make sure ID isn't being reset every pass
 if (!(attachedObjects _object isEqualTo [])) then {
-	_object setVariable ["zdo_vehicleID", str(_this)]
+	if (_object getVariable ["zdo_vehicleID", ""] == "") then {
+		//(TODO) Make the ID actually work
+		_object setVariable ["zdo_vehicleID", "lus_persist_" + (netId _object  select [2])];
+	};
 };
 private _attachedTo = attachedTo _object;
 if (!(isNull _attachedTo)) then {

@@ -5,12 +5,8 @@ Creates a unique ID for each parent object, so everything that's attached knows 
 params["_o", "_v"];
 
 if (!(isNull _v)) then {
-	private _pos = getPosASL _o;
-	private _posVeh = getPosASL _v;
-	private _relPos = [0, 0, 0];
-	_relPos set [0, _pos # 0- _posVeh # 0];
-	_relPos set [1, _pos # 1 - _posVeh # 1];
-	_relPos set [2, _pos # 2 - _posVeh # 2];
+	private _relPos = _v getRelPos _o;
+	private _vectorDirAndUp = [vectorDir _o, vectorUp _o];
 
 	
 	/*
@@ -21,15 +17,14 @@ if (!(isNull _v)) then {
 		missionNamespace setVariable "zdo_vehicleIds"
 	};*/
 	private _id = _v getVariable ["zdo_vehicleID", ""];
+	//(TODO) Make sure ID isn't being reset every pass
 	if (_id isEqualTo "") then {
-		_id = str(_v);
-		_v setVariable["zdo_vehicleID", str(_v)];
+		_id = "lus_persist_" + (netId _o select [2]);
+		_v setVariable["zdo_vehicleID", "lus_persist_" + (netId _o select [2])];
 	};
 	
-	_o setVariable["zdo_attachedTo", _id];
-	_o setVariable["zdo_attachedPos", _relPos];
-	
-	private _export = [["parent", _id], ["pos", _relPos]];
+
+	private _export = [_id,  _relPos, _vectorDirAndUp];
 	_o setVariable["zdo_attachedInfo", _export];
 	
 };
