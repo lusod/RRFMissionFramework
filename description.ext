@@ -20,6 +20,7 @@ class cfgFunctions // For loadout script
 {
     createShortcuts = 1;
 	#include "scripts\lusod\cfgFunctions.hpp"
+	#include "Functions\zdo\_mission\cfgFunctions.hpp"
 };
 
 

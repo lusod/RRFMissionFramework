@@ -89,3 +89,28 @@ Contains (In order of pbos):
 - [Suppress (Custom)](https://steamcommunity.com/sharedfiles/filedetails/?id=825174634)
 - [Teamwork Mission Framework](https://teamonetactical.com/wiki/doku.php?id=tmf:start) (Adds a bunch of QoL functions to 3den, also super easy ACRE setup! Skips ACRE PBO if you don't have ACRE)
 - [Zeus Additions](https://steamcommunity.com/sharedfiles/filedetails/?id=2387297579&searchtext=zeus+additions)
+# Zdo Persistence
+Included in the framework is Zdo persistence. 
+This is a fantastic persistence script that saves a lot and is super easy to use. 
+Highly recommend!
+
+## Saved items
+
+- vehicles (positions, damage, inventory, fuel, textures, flags)
+- crates/boxes (positions, damage, inventory, arsenal)
+- planted mines (positions)
+- players (positions, loadout, ACE medical)
+- all map markers
+- ACE rallypoint position
+- ACE trenches, ACE Fortify statics, any buildings placed by Zeus (technically, almost any static which are considered "Things" in Arma)
+- ruined buildings, fences, trees
+- all units (positions, loadout, ACE medical, roles in vehicles).
+
+## Documentation
+
+Please check out [Wiki](https://github.com/drzdo/arma3-persistent-campaign/wiki).
+
+## Known issues
+- [x] Vehicle attachments aren't saved
+- [ ] Vehicle attachment ration is applied in global reference frame instead of parent vehicle reference frame
+- [ ] Scale of markings are not preserved

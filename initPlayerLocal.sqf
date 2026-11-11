@@ -3,6 +3,7 @@
 	["chill","ASSIGNED"] call BIS_fnc_taskSetState;
 };
 */
+#include "Functions\zdo\_mission\inc_initPlayerLocal.sqf"
 
 _saveLoadout_action = ["Save Loadout","Save Loadout","",{[player] call lus_loadouts_fnc_saveInventory;},{true}] call ace_interact_menu_fnc_createAction;
 ["B_supplyCrate_F", 0, ["ACE_MainActions"], _saveLoadout_action] call ace_interact_menu_fnc_addActionToClass;
