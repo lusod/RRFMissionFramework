@@ -49,10 +49,18 @@ private _vars = _h getOrDefault ["vars", []];
 {
 	private _k = _x select 0;
 	private _v = _x select 1;
-	_initGlobal pushBack (format ['this setVariable ["%1", "%2"];', _k, _v]);
+	_initGlobal pushBack (format ["this setVariable ['%1', '%2'];", _k, _v]);
 	if (_k == "zdo_vehicleID") then {
 		_initGlobal pushBack (format ['this setVehicleVarName "%1";', _v]);
-		_initGlobal pushback (format ['missionNamespace setVariable [%1, this];', _v]);
+		_initGlobal pushback (format ['missionNamespace setVariable ["%1", this];', _v]);
+	} else {
+		if (_k == "zdo_attachedInfo") then {
+			//(TODO) Make this shit actually work
+			private _parent = _v select 0;
+			private _pos = _v select 1;
+			private _vectorDirAndUp = _v select 2;
+			_initServerOnly pushBack (format ['[this] spawn {params["_o"]; sleep 0.5; _o attachTo [%1, %2]; _o setVectorDirAndUp %3;};', _parent, _pos, _vectorDirAndUp]);
+		};
 	};
 } forEach _vars;
 
@@ -85,14 +93,8 @@ if (_rawType == "bu" || _rawType == "th" || _rawType == "fl") then {
 		_o set3DENAttribute ["objectIsSimple", true];
 	};
 	
-	_attachedTo = _h getOrDefault ["attachedTo", objNull];
-	_initServerOnly pushBack (format ['_a = "attached to %1";', _attachedTo]);
-	/*if (!(_attachedTo isEqualTo objNull)) then {
-		_initServerOnly pushBack (format ['this attachTo [%1, [0, 0, 0]];', _attachedTo]);
-	}*/
 	_tex = _h getOrDefault ["tex", []];
 
-	_initServerOnly pushBack (format ['_b = "Textured to %1";', _tex]);
 	if (!(_tex isEqualTo [])) then {
 		_texi = 0;
 		{

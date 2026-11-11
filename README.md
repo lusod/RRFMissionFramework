@@ -44,3 +44,8 @@ Highly recommend!
 ## Documentation
 
 Please check out [Wiki](https://github.com/drzdo/arma3-persistent-campaign/wiki).
+
+## Known issues
+- [x] Vehicle attachments aren't saved
+- [ ] Vehicle attachment ration is applied in global reference frame instead of parent vehicle reference frame
+- [ ] Scale of markings are not preserved
