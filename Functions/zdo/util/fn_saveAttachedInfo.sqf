@@ -6,7 +6,7 @@ params["_o", "_v"];
 
 if (!(isNull _v)) then {
 	private _relPos = _v getRelPos _o;
-	private _vectorDirAndUp = [vectorDir _o, vectorUp _o];
+	private _vectorDirAndUp = [_o, _v] call BIS_fnc_vectorDirAndUpRelative;
 
 	
 	/*
